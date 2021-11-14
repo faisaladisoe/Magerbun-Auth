@@ -12,7 +12,6 @@ from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 
 @permission_classes([IsAuthenticated|IsAdminUser])
 class MenuList(APIView):
-
     def get(self, request, format=None):
         menu = Menu.objects.all()
         serializers = MenuSerializer(menu, many=True)
