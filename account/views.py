@@ -38,6 +38,7 @@ def accountRegister(request):
 def accountProfile(request, role, email):
     try:
         account = Account.objects.get(email = email)
+        print(account)
     except Account.DoesNotExist:
         message = {'error': 'Sorry, seems there\'s a problem with your email'}
         return Response(message, status = status.HTTP_404_NOT_FOUND)
